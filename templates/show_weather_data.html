@@ -1,0 +1,40 @@
+{% block content %}
+    <section class="section">
+        <div class="container">
+            {% for city_weather in city_weather_data %}
+                <div class="columns">
+                    <div class="column is-offset-4 is-4">
+                        <div class="box">
+                            <article class="media">
+                                <div class="media-left">
+                                    <figure class="image is-64x64">
+                                        <img class="weather-icon" data-icon-id="{{ city_weather.location.currentConditions.icon }}" src="#"/>
+                                    </figure>
+                                </div>                                
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            <span class="title">{{ city_weather.location.name }}</span>
+                                            <br>
+                                            <span class="subtitle">{{ city_weather.location.currentConditions.temp }}° C</span>
+                                            <br> <br> {{ city_weather.location.values.0.conditions }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media-right">
+                                    {% if city_weather.location.name %}
+                                    <form method="POST" action="{% url 'delete_city' city_name=city_weather.location.name %}">
+                                            {% csrf_token %}
+                                            <button class="delete" type="submit"></button>
+                                        </form>
+                                    {% endif %}
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div id="city-list"></div>
+        </div>
+    </section>
+{% endblock %}

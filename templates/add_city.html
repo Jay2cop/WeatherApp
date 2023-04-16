@@ -1,0 +1,27 @@
+{% block content %}
+    <section class="section" id="weather-background"
+            style="max-height: 136px; background-image:url(/static/pictures/metofficegovuk_heroXLarge.jpeg)">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-4 is-4">
+                    <form method="POST" id="add-city-form">
+                        {% csrf_token %}
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <input class="input" id="city-input" name="city" type="text" placeholder="City Name">
+                            </div>
+                            <div class="control">
+                                <button class="button is-info">
+                                    Add City
+                                </button>
+                            </div>
+                        </div>
+                        <div class="city-notification">
+                            {% include 'notifications.html' %}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

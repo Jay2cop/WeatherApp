@@ -1,0 +1,15 @@
+.top-backround {
+  padding: 0px 0px 0px 0px;
+  background-color: #004682; }
+
+.surrey-logo {
+  margin-left: 3px;
+  width: 144px;
+  height: 44px;
+  background-image: url("/static/pictures/surrey-logo.svg"); }
+
+.weather-backround-picture {
+  max-height: 136px;
+  background-image: url("/static/pictures/metofficegovuk_heroXLarge.jpeg"); }
+
+/*# sourceMappingURL=base.css.map */
