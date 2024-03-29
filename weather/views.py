@@ -27,7 +27,7 @@ def home(request):
 def fetch_weather_data(city_name):
     import requests
 
-    apikey = '1PYNQ6AWUDJE9AFERDCHJHSXK'
+    apikey = '**API**'
     webapi = f'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/forecast?aggregateHours=24&contentType=json&unitGroup=metric&locationMode=single&key={apikey}&locations={city_name}'
 
     response = requests.get(webapi)
